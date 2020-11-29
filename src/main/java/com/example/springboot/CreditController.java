@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,7 @@ public class CreditController {
     }
 
 	@RequestMapping(value = "/credit/check")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<Object> check(@RequestBody UserForm form) // @ModelAttribute 
     {
         HashMap<String, String> respMap = getResponse(form);
