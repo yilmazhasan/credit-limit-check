@@ -1,5 +1,7 @@
 package com.example.springboot.service;
 
+import com.example.springboot.service.DbUtil;
+
 import com.example.springboot.model.UserForm;
 import java.util.HashMap;
 
@@ -42,6 +44,8 @@ public class CreditUtil {
             map.put("smsSent", String.valueOf(smsSent));
             map.put("amount", String.valueOf(amount));
             map.put("phone", String.valueOf(form.phone));
+
+            DbUtil.saveToDb(form, map);
 
         return map;
     }
