@@ -1,8 +1,8 @@
 package com.example.springboot;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,19 +23,12 @@ public class CreditController {
 
     public static int CREDIT_LIMIT_MULTIPLIER = 4;
 
-	@RequestMapping("/credit")
+	@RequestMapping(value="/credit", method = RequestMethod.GET)
 	public String index() {
-		return "Hello there!";
+		return "Wellcome to Credit Controller!";
 	}
 
-	@RequestMapping(value = "/test")
-    public ResponseEntity<Object> test(HttpEntity<String> httpEntity) {
-        String json = httpEntity.getBody();
-
-        return new ResponseEntity<Object>(json, HttpStatus.OK);
-    }
-
-	@RequestMapping(value = "/credit/check")
+	@RequestMapping(value = "/credit/check", method = RequestMethod.POST)
     @CrossOrigin(origins = "*")
     public ResponseEntity<Object> check(@RequestBody UserForm form) // @ModelAttribute 
     {
