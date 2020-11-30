@@ -7,7 +7,11 @@ public class UserForm
         public String tckn = "";
         public String phone = "";
 
-        public UserForm() {
+        public UserForm(String fullname, int income, String tckn, String phone) {
+            this.fullname = fullname;
+            this.income = income;
+            this.tckn = tckn;
+            this.phone = phone;
             // TODO Auto-generated constructor stub
         }
 
